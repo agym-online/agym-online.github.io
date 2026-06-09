@@ -156,7 +156,6 @@ function CaseStudyCarousel({ name, folder, slideCount, index }: CaseStudyProps) 
 export function CaseStudies() {
   const cases = [
     { name: 'Туратбек Чынарбеков', folder: 'turatbek', slideCount: 14 },
-    { name: 'Айгерим Паязова', folder: 'aigerim', slideCount: 14 },
   ];
 
   return (

@@ -120,7 +120,10 @@ export function FinalCTA() {
             </motion.p>
 
             {/* CTA Button */}
-            <motion.button
+            <motion.a
+              href="https://wa.me/996508230200"
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -128,12 +131,14 @@ export function FinalCTA() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-xl font-semibold overflow-hidden"
-              style={{ 
+              style={{
                 background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))',
                 color: '#0a0e1a',
                 fontSize: '1.25rem',
                 fontFamily: 'Space Grotesk, sans-serif',
-                boxShadow: '0 15px 50px rgba(0, 217, 255, 0.4)'
+                boxShadow: '0 15px 50px rgba(0, 217, 255, 0.4)',
+                textDecoration: 'none',
+                display: 'inline-flex'
               }}
             >
               <span className="relative z-10 flex items-center gap-3">
@@ -147,14 +152,15 @@ export function FinalCTA() {
               </span>
               <motion.div
                 className="absolute inset-0"
-                style={{ 
-                  background: 'linear-gradient(135deg, var(--accent-gold), var(--accent-primary))'
+                style={{
+                  background: 'linear-gradient(135deg, var(--accent-gold), var(--accent-primary))',
+                  pointerEvents: 'none'
                 }}
                 initial={{ x: '-100%' }}
                 whileHover={{ x: '0%' }}
                 transition={{ duration: 0.4 }}
               />
-            </motion.button>
+            </motion.a>
 
             {/* Trust Elements */}
             <motion.div

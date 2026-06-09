@@ -1,14 +1,13 @@
-import { motion, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 import { Target, Package, Users, TrendingUp } from 'lucide-react';
-import { useRef, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function AnimatedNumber({ value, suffix = '' }: { value: number; suffix?: string }) {
   const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true });
+  const [hasStarted, setHasStarted] = useState(false);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!hasStarted) return;
 
     let start = 0;
     const duration = 2000;
@@ -25,10 +24,15 @@ function AnimatedNumber({ value, suffix = '' }: { value: number; suffix?: string
     }, 16);
 
     return () => clearInterval(timer);
-  }, [isInView, value]);
+  }, [hasStarted, value]);
 
   return (
-    <span ref={ref}>{count}{suffix}</span>
+    <motion.span
+      onViewportEnter={() => setHasStarted(true)}
+      viewport={{ once: true, amount: 0.5 }}
+    >
+      {count}{suffix}
+    </motion.span>
   );
 }
 

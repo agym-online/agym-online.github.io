@@ -45,7 +45,7 @@ export function Process() {
     <section className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 opacity-5">
-        <div 
+        <div
           className="absolute inset-0"
           style={{
             backgroundImage: 'linear-gradient(to right, var(--accent-primary) 1px, transparent 1px), linear-gradient(to bottom, var(--accent-primary) 1px, transparent 1px)',
@@ -62,7 +62,7 @@ export function Process() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 
+          <h2
             className="mb-4"
             style={{
               fontSize: 'clamp(2rem, 5vw, 3.5rem)',
@@ -74,7 +74,7 @@ export function Process() {
           >
             Кантип иштейт?
           </h2>
-          <p 
+          <p
             className="max-w-2xl mx-auto"
             style={{
               fontSize: '1.25rem',
@@ -93,12 +93,14 @@ export function Process() {
           <div className="hidden lg:block absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full">
             <motion.div
               className="w-full h-full rounded-full"
-              style={{ background: 'linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary))' }}
+              style={{
+                background: 'linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary))',
+                transformOrigin: 'top'
+              }}
               initial={{ scaleY: 0 }}
               whileInView={{ scaleY: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeOut" }}
-              style={{ transformOrigin: 'top' }}
             />
           </div>
 
@@ -106,7 +108,7 @@ export function Process() {
           <div className="space-y-24">
             {processSteps.map((step, index) => {
               const isEven = index % 2 === 0;
-              
+
               return (
                 <motion.div
                   key={index}
@@ -114,9 +116,8 @@ export function Process() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative flex flex-col lg:flex-row items-center gap-8 ${
-                    isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                  }`}
+                  className={`relative flex flex-col lg:flex-row items-center gap-8 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                    }`}
                 >
                   {/* Content Card */}
                   <div className="flex-1 w-full lg:max-w-md">
@@ -130,7 +131,7 @@ export function Process() {
                       }}
                     >
                       {/* Week Badge */}
-                      <div 
+                      <div
                         className="inline-block px-4 py-1 rounded-full mb-4"
                         style={{
                           background: 'rgba(0, 217, 255, 0.1)',
@@ -145,7 +146,7 @@ export function Process() {
                       </div>
 
                       {/* Title */}
-                      <h3 
+                      <h3
                         className="mb-4"
                         style={{
                           fontSize: '1.75rem',
@@ -169,11 +170,11 @@ export function Process() {
                             transition={{ delay: 0.2 + itemIndex * 0.1 }}
                             className="flex items-start gap-3"
                           >
-                            <CheckCircle2 
-                              className="w-5 h-5 flex-shrink-0 mt-0.5" 
-                              style={{ color: 'var(--success)' }} 
+                            <CheckCircle2
+                              className="w-5 h-5 flex-shrink-0 mt-0.5"
+                              style={{ color: 'var(--success)' }}
                             />
-                            <span 
+                            <span
                               style={{
                                 color: 'var(--text-muted)',
                                 fontSize: '1rem',
@@ -202,7 +203,7 @@ export function Process() {
                         boxShadow: '0 0 0 8px var(--bg-deep), 0 0 30px rgba(0, 217, 255, 0.3)'
                       }}
                     >
-                      <span 
+                      <span
                         className="text-2xl"
                         style={{
                           fontFamily: 'Space Grotesk, sans-serif',
